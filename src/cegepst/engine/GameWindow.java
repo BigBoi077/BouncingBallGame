@@ -10,11 +10,7 @@ public class GameWindow extends JFrame {
     private static final int SLEEP = 25;
     private long before;
     private JPanel panel;
-    private int radius = 25;
-    private int x;
-    private int y;
-    private int dx;
-    private int dy;
+    private Ball ball;
     private BufferedImage bufferedImage;
     private Graphics2D buffer;
     private boolean playing = true;
@@ -35,13 +31,7 @@ public class GameWindow extends JFrame {
         panel.setDoubleBuffered(true);
         super.add(panel);
 
-        x = getRandom(0 + radius * 2, 800 - radius * 2);
-        y = getRandom(0 + radius * 2, 600 - radius * 2);
-        dx = getRandom(0, 1) == 0 ? 4 : -4;
-        dy = getRandom(0, 1) == 0 ? 4 : -4;
-
-        start();
-
+        ball = new Ball(25);
     }
 
     public void start() {
@@ -76,7 +66,7 @@ public class GameWindow extends JFrame {
 
     private void drawOnBuffer() {
         buffer.setPaint(Color.red);
-        buffer.fillOval(x, y, radius * 2, radius * 2);
+        buffer.fillOval(ball.getX(), ball.getY(), ball.getRadius() * 2, ball.getRadius() * 2);
 
         buffer.setPaint(Color.white);
         buffer.drawString("Score : " + score, 10, 20);
@@ -90,21 +80,9 @@ public class GameWindow extends JFrame {
     }
 
     private void update() {
-        x += dx;
-        y += dy;
-
-        if (y <= radius || y >= 600 - radius) {
-            dy *= -1;
+        ball.update();
+        if (ball.hasTouchedBound()) {
             score += 10;
         }
-        if (x <= radius || x >= 800 - radius) {
-            dx *= -1;
-            score += 10;
-        }
-    }
-
-    private int getRandom(int min, int max) {
-        Random random = new Random();
-        return random.nextInt((max - min) + 1) + min;
     }
 }
