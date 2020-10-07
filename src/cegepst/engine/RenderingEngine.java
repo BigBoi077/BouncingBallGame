@@ -48,6 +48,7 @@ public class RenderingEngine {
         panel.setBackground(Color.blue);
         panel.setFocusable(true);
         panel.setDoubleBuffered(true);
+        frame.add(panel);
     }
 
     private void initialiseFrame() {

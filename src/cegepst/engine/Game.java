@@ -11,8 +11,6 @@ public class Game {
     private RenderingEngine renderingEngine;
     private Ball ball;
 
-    private Graphics2D buffer;
-
     public Game() {
         renderingEngine = new RenderingEngine();
         ball = new Ball(25);
