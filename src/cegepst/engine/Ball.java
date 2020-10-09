@@ -16,13 +16,13 @@ public class Ball {
 
         x = getRandom(radius * 2, 800 - radius * 2);
         y = getRandom(radius * 2, 600 - radius * 2);
-        velocityX = getRandom(0, 1) == 0 ? 4 : -4;
-        velocityY = getRandom(0, 1) == 0 ? 4 : -4;
+        velocityX = getRandom(0, 1) == 0 ? 100 : -100 ;
+        velocityY = getRandom(0, 1) == 0 ? 100 : -100;
     }
 
     public void update() {
-        x += velocityX * getRandom(0, 5);
-        y += velocityY * getRandom(0, 5);
+        x += velocityX;
+        y += velocityY;
 
         if (hasTouchVerticalBound()) {
             velocityY *= -1;
