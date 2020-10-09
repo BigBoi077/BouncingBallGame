@@ -2,7 +2,7 @@ package cegepst.engine;
 
 import java.awt.*;
 
-public class Game {
+public abstract class Game {
 
     private static final int SLEEP = 25;
     private long before;
@@ -13,21 +13,10 @@ public class Game {
         renderingEngine = new RenderingEngine();
     }
 
-    public void initialise() {
-
-    }
-
-    public void conclude() {
-
-    }
-
-    public void update() {
-
-    }
-
-    public void draw(Graphics2D buffer) {
-
-    }
+    public abstract void initialise();
+    public abstract void conclude();
+    public abstract void update();
+    public abstract void draw(Graphics2D buffer);
 
     public void start() {
         initialise();

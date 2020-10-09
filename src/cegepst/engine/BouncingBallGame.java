@@ -12,6 +12,16 @@ public class BouncingBallGame extends Game {
     }
 
     @Override
+    public void initialise() {
+
+    }
+
+    @Override
+    public void conclude() {
+
+    }
+
+    @Override
     public void update() {
         ball.update();
         if (ball.hasTouchedBound()) {
