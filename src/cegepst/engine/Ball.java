@@ -21,8 +21,8 @@ public class Ball {
     }
 
     public void update() {
-        x += velocityX;
-        y += velocityY;
+        x += velocityX * getRandom(0, 5);
+        y += velocityY * getRandom(0, 5);
 
         if (hasTouchVerticalBound()) {
             velocityY *= -1;
