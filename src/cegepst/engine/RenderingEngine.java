@@ -2,7 +2,9 @@ package cegepst.engine;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+import java.net.URL;
 
 public class RenderingEngine {
     private JFrame frame;
@@ -43,6 +45,10 @@ public class RenderingEngine {
         return rh;
     }
 
+    public void addInputListener(KeyListener listener) {
+        panel.addKeyListener(listener);
+    }
+
     private void initialisePanel() {
         panel = new JPanel();
         panel.setBackground(Color.blue);
@@ -52,12 +58,17 @@ public class RenderingEngine {
     }
 
     private void initialiseFrame() {
+        // URL iconURL = getClass().getResource("../");
+        // ImageIcon icon = new ImageIcon(iconURL);
+        // frame.setIconImage(icon.getImage());
+
         frame = new JFrame();
         frame.setSize(800, 600);
         // Pour centrer
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
-        frame.setTitle("Bouncing Ball Game");
+        frame.setTitle("Moving Rectangle Game");
+        frame.setUndecorated(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
