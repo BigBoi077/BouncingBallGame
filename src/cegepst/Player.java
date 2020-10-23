@@ -1,6 +1,7 @@
 package cegepst;
 
 import cegepst.engine.Buffer;
+import cegepst.engine.Footprint;
 import cegepst.engine.InputHandler;
 
 import java.awt.*;
@@ -11,11 +12,15 @@ public class Player {
     private int x;
     private int y;
     private int width = 30;
-    private int height= 60;
+    private int height= 30;
 
     public Player(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Footprint layFootPrint() {
+        return new Footprint(x, y);
     }
 
     public void update(InputHandler inputHandler) {

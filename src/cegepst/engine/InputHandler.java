@@ -73,4 +73,9 @@ public class InputHandler implements KeyListener {
     public boolean isQuitPressed() {
         return quitPressed;
     }
+
+    public boolean isMoving() {
+        return leftPressed || rightPressed
+                || downPressed || upPressed;
+    }
 }

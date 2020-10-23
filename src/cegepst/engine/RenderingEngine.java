@@ -1,9 +1,12 @@
 package cegepst.engine;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 public class RenderingEngine {
@@ -58,10 +61,6 @@ public class RenderingEngine {
     }
 
     private void initialiseFrame() {
-        // URL iconURL = getClass().getResource("../");
-        // ImageIcon icon = new ImageIcon(iconURL);
-        // frame.setIconImage(icon.getImage());
-
         frame = new JFrame();
         frame.setSize(800, 600);
         // Pour centrer
