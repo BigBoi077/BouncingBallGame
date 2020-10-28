@@ -1,4 +1,4 @@
-package cegepst.engine.entity;
+package cegepst.engine.controls;
 
 public enum Direction {
     LEFT(-1, 0),
