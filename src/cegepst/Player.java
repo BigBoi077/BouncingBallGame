@@ -9,11 +9,14 @@ import java.awt.*;
 
 public class Player extends ControllableEntity {
 
-    public Player(MovementController controller) {
+    private Color color;
+
+    public Player(MovementController controller, Color color) {
         super(controller);
         super.setDimensions(30, 30);
         super.teleport(100, 100);
         super.setSpeed(4);
+        this.color = color;
     }
 
     public Footprint layFootPrint() {
@@ -27,6 +30,6 @@ public class Player extends ControllableEntity {
 
     @Override
     public void draw(Buffer buffer) {
-        buffer.drawRectangle(x, y, width, height, Color.green);
+        buffer.drawRectangle(x, y, width, height, this.color);
     }
 }
